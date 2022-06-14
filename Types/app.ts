@@ -1,36 +1,47 @@
-import { type } from "os";
+const me = {
+    name: "Pauline", 
+    age: 27
+}
 
-console.log('Learn types');
-/* The core primitive types in TypeScript are all lowercase!
-    - number (float, integers), 
-    - string
-    - boolean 
-
-    TS only help during development before compiling TS to JS
-
-    JS is dynamically typed (types checking at runtime)
-    TS is static typed (types checking during developement)
-
-    Type Inference
-    Try his best to understand the type of a value/constant
-*/
-
-const add = (n1: number, n2: number, showResult: boolean, textResult: string) => {
-    const calcul = n1 + n2;
-    if (showResult) {
-        console.log(textResult + calcul)
-    } else {
-        return calcul
-    }
-};
 /*
-    TYPE INFERENCE
-    TS try his best to understand the type of a value/constant
+    Here we have keys types pair 
+    const me = {
+        name: string;
+        age: number;
+    }
 */
-let number1: number;
-number1 =  4
-const number2 = 5.2;
-const showResult = true;
-// This synthax allow to not initializing the type, but setting it on our on, it's not type inference
-let textResult = "The Result is ... "
-add(+number1, +number2, showResult, textResult)
+
+const me2: object =  {
+    name: "Pauline", 
+    age: 27
+}
+/*
+    TS doesn't know any proppertu types 
+    const me2: object
+*/
+
+const me3: { 
+    name: string;
+    age: number; 
+} =  {
+    name: "Pauline", 
+    age: 27
+}
+
+const me4: {
+    name: string,
+    username: string[],
+    age: number,
+    address: {
+        city: string,
+        zipcode: number,
+    }
+} = {
+    name: "Pau",
+    username: ["Duss", "Paulin"],
+    age: 27,
+    address: {
+        city: "BARCELONNETTE",
+        zipcode: 59970,
+    }
+}
