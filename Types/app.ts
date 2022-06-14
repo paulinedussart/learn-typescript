@@ -1,3 +1,5 @@
+import { type } from "os";
+
 console.log('Learn types');
 /* The core primitive types in TypeScript are all lowercase!
     - number (float, integers), 
@@ -5,8 +7,12 @@ console.log('Learn types');
     - boolean 
 
     TS only help during development before compiling TS to JS
-    JS is dynamically typed (resolved at runtime)
-    TS is static typed (set during developement)
+
+    JS is dynamically typed (types checking at runtime)
+    TS is static typed (types checking during developement)
+
+    Type Inference
+    Try his best to understand the type of a value/constant
 */
 
 const add = (n1: number, n2: number, showResult: boolean, textResult: string) => {
@@ -17,9 +23,14 @@ const add = (n1: number, n2: number, showResult: boolean, textResult: string) =>
         return calcul
     }
 };
-
-const number1 = 3.4;
+/*
+    TYPE INFERENCE
+    TS try his best to understand the type of a value/constant
+*/
+let number1: number;
+number1 =  4
 const number2 = 5.2;
 const showResult = true;
-const textResult = "The Result is ... "
+// This synthax allow to not initializing the type, but setting it on our on, it's not type inference
+let textResult = "The Result is ... "
 add(+number1, +number2, showResult, textResult)
