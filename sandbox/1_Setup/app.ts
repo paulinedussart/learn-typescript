@@ -9,7 +9,7 @@ const button = document.querySelector("button");
     HTMLInputElement have one
 */
 let input2 = document.getElementById('num2')! as HTMLInputElement;
-let value = input2.value 
+let value = input2.value
 
 /* 
     We tell to typescript compiler that num1 and num2 are number type of
@@ -18,11 +18,11 @@ function add(num1: number, num2: number) {
   return num1 + num2;
 }
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
   console.log(add(+input1.value, +input2.value));
 });
 
 /*
     If I run tsc index.ts, a index.js file will be created
 */
-export {};
+export { };
